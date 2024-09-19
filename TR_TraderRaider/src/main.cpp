@@ -23,9 +23,6 @@ BGSKeyword* kcheck = nullptr;
 
 bool isVendorDeathHandlerRegistered = false;
 
-//126570;
-//BGSObjectInstanceExtra* (*_BGSObjectInstanceExtra_ctor)(BGSObjectInstanceExtra*);
-
 void AddItem(BGSInventoryList* list, TESBoundObject* bound, uint32_t count, ExtraDataList* extra, uint16_t c)
 {
 	using func_t = decltype(&AddItem);
@@ -178,7 +175,7 @@ void OnF4SEMessage(F4SE::MessagingInterface::Message* msg)
 	case F4SE::MessagingInterface::kGameLoaded:
 
         if (!isVendorDeathHandlerRegistered) {
-			logger::info("등록");
+			//logger::info("등록");
 
 			dataHandler = RE::TESDataHandler::GetSingleton();
 			p = PlayerCharacter::GetSingleton();
@@ -188,8 +185,8 @@ void OnF4SEMessage(F4SE::MessagingInterface::Message* msg)
 			factionManager = FactionManager::GetInstance();
 			factionManager->ProcessFactionForms();
 
-			uint32_t tete = (factionManager->GetFactions()).size();
-			logger::info("팩션수 {}", tete);
+			//uint32_t tete = (factionManager->GetFactions()).size();
+			//logger::info("팩션수 {}", tete);
 
 			//FactionRegister();
 
