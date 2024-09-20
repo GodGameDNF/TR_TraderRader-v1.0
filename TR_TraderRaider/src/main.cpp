@@ -120,6 +120,9 @@ void CheckVendor(Actor* a)
 	} else if (vendorEditorID.find("WorkshopVendor") != std::string::npos) {
 		//logger::info("정착지 상인");
 		TESForm* note = dataHandler->LookupForm(0x80F, "TR_TraderRaider.esp");
+		if (!note)
+			return;
+		
 		TESBoundObject* bound = (TESBoundObject*)note;
 
 		ExtraDataList* tempData = new ExtraDataList;
